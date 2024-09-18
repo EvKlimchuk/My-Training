@@ -17,8 +17,8 @@ print(2 * 2 + 2 == 2 * (2 + 2))
 
 # 4th program
 
-print(float('123.456'))
-print(int(123.456 * 10 % 1230.56))
+
+print(int(float('123.456') * 10 % 1230.56))
 
 
 
