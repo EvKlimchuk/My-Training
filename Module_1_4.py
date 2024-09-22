@@ -1,6 +1,6 @@
 #Homework "Организация программ и методы строк"
 
-my_string = input("Inpute your text here: ")
+my_string = input("Input your text here: ")
 
 print("the number of symbols:", len(my_string))
 print(my_string.upper())
