@@ -10,7 +10,8 @@ for i in range(len(numbers)):
             if numbers[i] % j == 0:
                 not_primes.append(numbers[i])
                 break
-        else:
-            primes.append(numbers[i])
+            else:
+                primes.append(numbers[i])
+                break
 print('Primes: ', primes)
 print('Not primes: ', not_primes)
