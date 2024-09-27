@@ -35,3 +35,24 @@ for i in range(len(numbers_1)):
 print('Primes: ', primes_1)
 print('Not Primes: ', not_primes_1)
 
+print('___________________________________________')
+# Option 3 Using Flag is_prime
+
+numbers_2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+primes_2 = []
+not_primes_2 = []
+is_prime = True
+for i in range(len(numbers_2)):
+    if numbers_2[i] > 1:
+        for j in range(2, numbers_2[i]):
+            if numbers_2[i] % j == 0:
+                is_prime = False
+
+        if is_prime:
+            primes_2.append(numbers_2[i])
+
+        else:
+            is_prime = True
+            not_primes_2.append(numbers_2[i])
+print('Primes: ', primes_2)
+print('Not Primes: ', not_primes_2)
