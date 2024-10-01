@@ -1,4 +1,4 @@
-from Module_1_3 import is_student
+#Домашнаяя работу по разделу 3.1 Пространство имен
 
 calls = 0
 def count_calls( ):
