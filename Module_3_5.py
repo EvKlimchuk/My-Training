@@ -33,5 +33,5 @@ def get_multiplied_digits(number):
         else:
             return first
 
-result = get_multiplied_digits(40203)
+result = get_multiplied_digits(402030)
 print(result)
