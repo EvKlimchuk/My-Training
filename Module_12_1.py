@@ -1,6 +1,7 @@
 import unittest
 from Unit_test import Runner
 
+
 """class Runner:
     def __init__(self, name):
         self.name = name
@@ -17,7 +18,9 @@ from Unit_test import Runner
 """
 
 class RunnerTest(unittest.TestCase):
+    is_frozen = False
 
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_walk(self):
         # Тестирование метода walk
         runner = Runner("TestRunner")
@@ -25,6 +28,7 @@ class RunnerTest(unittest.TestCase):
             runner.walk()
         self.assertEqual(runner.distance, 50, "After walking 10 times, distance should be 50")
 
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_run(self):
         # Тестирование метода run
         runner = Runner("TestRunner")
@@ -32,6 +36,7 @@ class RunnerTest(unittest.TestCase):
             runner.run()
         self.assertEqual(runner.distance, 100, "After running 10 times, distance should be 100")
 
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_challenge(self):
         # Тестирование вызова run и walk для двух объектов
         runner1 = Runner("Runner1")

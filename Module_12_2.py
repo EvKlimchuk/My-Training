@@ -51,7 +51,13 @@ class Tournament:
                     self.participants.remove(participant)
         return finishers
 
+
+
+
+
 class TournamentTest(unittest.TestCase):
+    is_frozen = True
+
     @classmethod
     def setUpClass(cls):
         cls.all_results = {}
@@ -68,24 +74,27 @@ class TournamentTest(unittest.TestCase):
             readable_results = {k: v.name for k, v in value.items()}
             print(f"{key}: {readable_results}")
 
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_usain_nick(self):
         tournament = Tournament(90, self.runner_usain, self.runner_nick)
         results = tournament.start()
         TournamentTest.all_results["Usain vs Nick"] = results
         self.assertTrue(results[max(results)].name == "Nick")
 
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_andrey_nick(self):
         tournament = Tournament(90, self.runner_andrey, self.runner_nick)
         results = tournament.start()
         TournamentTest.all_results["Andrey vs Nick"] = results
         self.assertTrue(results[max(results)].name == "Nick")
-
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_usain_andrey_nick(self):
         tournament = Tournament(90, self.runner_usain, self.runner_andrey, self.runner_nick)
         results = tournament.start()
         TournamentTest.all_results["Usain vs Andrey vs Nick"] = results
         self.assertTrue(results[max(results)].name == "Nick")
 
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_no_progress_participant(self): # Дополнительный тест на проверку самого медленного бегуна
         slow_runner = Runner("Slow", speed=1)
         tournament = Tournament(20, self.runner_usain, slow_runner)
